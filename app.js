@@ -1,6 +1,7 @@
 
 const tbodey = document.getElementById('tbody')
 const boton = document.getElementById('button')
+const botonCancel = document.getElementById('buttonCancel')
 
 let data = JSON.parse(localStorage.getItem('users')) || []
 
@@ -37,6 +38,21 @@ const renderaizer = () => {
 
 }
 
+botonCancel.addEventListener("click", ()=> {
+    boton.textContent = "Save"
+    editIdi = null
+
+    document.getElementById('name').value = ''
+    document.getElementById('lastname').value = ''
+    document.getElementById('role').value = ''
+    document.getElementById('age').value = ''
+    document.getElementById('profetion').value = ''
+
+    botonCancel.classList.add('buttonCancelOff')
+     boton.classList.remove('buttonUpdate')
+
+})
+
 
 tbodey.addEventListener('click', (e) => {
     if (e.target.classList.contains('delete')) {
@@ -51,7 +67,7 @@ tbodey.addEventListener('click', (e) => {
 
 tbodey.addEventListener('click', (e) => {
     if (e.target.classList.contains('update')) {
-
+        botonCancel.classList.remove('buttonCancelOff')
         const findItem = e.target.getAttribute('data-id')
         const updateItem = data.find(u => u.id == findItem)
         const { name, lastName, role, age, profetion } = updateItem

@@ -87,9 +87,30 @@ tr:hover {
 }
 
 .button:hover {
-    background-color: white;
-    border: solid rgb(31, 33, 34) 2px;
-    color: black;
+    background-color: rgb(70, 69, 69);
+}
+
+.buttonCancel {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(213, 29, 29);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  
+}
+
+.buttonCancelOff {
+    display: none;
+}
+
+
+
+.buttonCancel:hover {
+    background-color: rgb(155, 31, 31);
+
 }
 
 .buttonUpdate {
