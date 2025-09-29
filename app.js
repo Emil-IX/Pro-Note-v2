@@ -5,7 +5,8 @@ const botonCancel = document.getElementById('buttonCancel')
 
 let data = JSON.parse(localStorage.getItem('users')) || []
 
-let uid = data.length > 0 ? Math.max(...data.map(u => u.id)) : 1
+let uid = data.length > 0 ? Math.max(...data.map(u => Number(u.id))) + 1 : 1
+
 
 let editIdi = null
 
@@ -38,8 +39,8 @@ const renderaizer = () => {
 
 }
 
-botonCancel.addEventListener("click", ()=> {
-    boton.textContent = "Save"
+botonCancel.addEventListener("click", () => {
+    boton.textContent = "Create"
     editIdi = null
 
     document.getElementById('name').value = ''
@@ -49,7 +50,7 @@ botonCancel.addEventListener("click", ()=> {
     document.getElementById('profetion').value = ''
 
     botonCancel.classList.add('buttonCancelOff')
-     boton.classList.remove('buttonUpdate')
+    boton.classList.remove('buttonUpdate')
 
 })
 
@@ -80,7 +81,7 @@ tbodey.addEventListener('click', (e) => {
 
         editIdi = findItem
         boton.textContent = 'Update'
-        boton.classList.add('buttonUpdate') 
+        boton.classList.add('buttonUpdate')
 
     }
 })
@@ -101,14 +102,15 @@ boton.addEventListener("click", () => {
         }
 
         editIdi = null
-        boton.textContent = "Save"
+        boton.textContent = "Create"
         boton.classList.remove('buttonUpdate')
-
+        botonCancel.classList.add('buttonCancelOff')
+        
 
     } else {
 
         let user = {
-            id: uid.toString(),
+            id: uid,
             name: document.getElementById('name').value,
             lastName: document.getElementById('lastname').value,
             role: document.getElementById('role').value,

@@ -10,7 +10,7 @@
 table {
     margin-top: 20px;
     border-collapse: collapse;
-    width: 90%;
+    width: 100%;
 
 }
 
@@ -25,11 +25,12 @@ td {
     border: 1px solid black;
     padding: 14px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    
 }
 
 
 td {
+    white-space: nowrap;
     background-color: rgba(42, 39, 39, 0.947);
     color: white;
 }
@@ -47,6 +48,7 @@ tr:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 0 2px;
 
 }
 
@@ -66,6 +68,8 @@ tr:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+     margin: 0 2px;
+    
 }
 
 .update:hover {
@@ -116,7 +120,7 @@ tr:hover {
 .buttonUpdate {
     width: 100px;
     height: 30px;
-    background-color: rgb(14, 175, 255);
+    background-color: rgb(23, 152, 252);
     color: white;
     border: none;
     border-radius: 5px;
@@ -126,9 +130,7 @@ tr:hover {
 }
 
 .buttonUpdate:hover {
-    background-color: white;
-    border: solid rgb(24, 178, 255) 2px;
-    color: rgb(6, 180, 255);
+    background-color: rgb(9, 88, 172);
 }
 
 .inputs {
@@ -144,8 +146,8 @@ tr:hover {
 }
 
 .accionsContainer {
-    justify-content: center;
     display: flex;
+    justify-content: center;
     padding: 11px;
     gap: 5px;
 }
